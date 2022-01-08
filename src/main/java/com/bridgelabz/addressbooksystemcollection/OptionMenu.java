@@ -33,7 +33,6 @@ public class OptionMenu {
                     addOrRemove.removePerson();
                     break;
 
-
                 default:
                     System.exit(0);
                     break;
