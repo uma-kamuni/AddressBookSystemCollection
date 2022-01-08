@@ -6,6 +6,5 @@ public class AddressBookProgram {
 		System.out.println("WELCOME TO ADDRESS BOOK PROGRAM");
 		OptionMenu operation = new OptionMenu();
 		operation.operation();
-
 	}
 }
