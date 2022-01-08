@@ -86,4 +86,11 @@ public class detailsAddressBook {
 		this.emailAddress = emailAddress;
 	}
 
+	@Override
+	public String toString() {
+		return "detailsAddressBook [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address
+				+ ", city=" + city + ", state=" + state + ", zip=" + zip + ", phoneNumber=" + phoneNumber
+				+ ", emailAddress=" + emailAddress + "]";
+	}
+
 }
