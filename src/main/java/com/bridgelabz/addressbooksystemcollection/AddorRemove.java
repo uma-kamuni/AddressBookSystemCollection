@@ -50,4 +50,83 @@ public class AddorRemove {
 		}
 	}
 
+	public void editPerson() {
+        System.out.println("Enter a first name you want to edit...");
+        String editName = scanner.nextLine();
+
+        boolean found = false;
+        for (detailsAddressBook details : detailsAddressBookArrayList) {
+            if (details.getFirstName().equals(editName)) {
+                found = true;
+                System.out.println(details);
+
+                System.out.println("What do you want to edit \n" +
+                        "1. First Name / 2. Last Name / 3. Address / 4. City / " +
+                        "5. State / 6. Zip code / 7. Phone Number / 8. Email");
+
+                int choice = scanner.nextInt();
+                switch (choice) {
+
+                    case 1:
+                        System.out.println("Enter a new First Name");
+                        String newFirstName = scanner.next();
+                        details.setFirstName(newFirstName);
+                        break;
+
+                    case 2:
+                        System.out.println("Enter a new Last Name");
+                        String lastName = scanner.next();
+                        details.setLastName(lastName);
+                        break;
+                    case 3:
+                        System.out.println("Enter a new Address");
+                        String address = scanner.next();
+                        details.setAddress(address);
+                        break;
+                    case 4:
+                        System.out.println("Enter a new City");
+                        String city = scanner.next();
+                        details.setAddress(city);
+                        break;
+                    case 5:
+                        System.out.println("Enter a new State");
+                        String state = scanner.next();
+                        details.setState(state);
+                        break;
+                    case 6:
+                        System.out.println("Enter a new ZipCode");
+                        Long zip = scanner.nextLong();
+                        details.setZip(zip);
+                        break;
+                    case 7:
+                        System.out.println("Enter a new Phone Number");
+                        Long phoneNumber = scanner.nextLong();
+                        details.setPhoneNumber(phoneNumber);
+                        break;
+                    case 8:
+                        System.out.println("Enter a new Email Address");
+                        String email = scanner.next();
+                        details.setEmailAddress(email);
+                        break;
+
+                    default:
+                        System.out.println("You Press Wrong option ");
+
+                }
+
+            }
+
+        }
+        if (found) {
+            System.out.println("Your Edit Choice is Update SUCCESSFULLY");
+        } else {
+            System.out.println("First Name is not found");
+        }
+
+
+    }
+
+
+
+
 }
