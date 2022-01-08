@@ -3,7 +3,7 @@ package com.bridgelabz.addressbooksystemcollection;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddorRemove {
+public class AddOrRemove {
 
 	ArrayList<detailsAddressBook> detailsAddressBookArrayList = new ArrayList<>();
 	Scanner scanner = new Scanner(System.in);
@@ -126,7 +126,26 @@ public class AddorRemove {
 
     }
 
+	public void removePerson() {
 
+        System.out.println("Enter a first name you want to delete...");
+        String removeName = scanner.next();
+
+        boolean found = false;
+        for (int i = 0; i < detailsAddressBookArrayList.size(); i++) {
+            if (detailsAddressBookArrayList.get(i).getFirstName().equals(removeName))
+            {
+                found = true;
+                detailsAddressBookArrayList.remove(i);
+            }
+
+        }
+        if (found) {
+            System.out.println("ADDRESS CONTACT BOOK IS DELETED SUCCESSFULLY");
+        } else {
+            System.out.println("First Name not found");
+        }
+    }
 
 
 }

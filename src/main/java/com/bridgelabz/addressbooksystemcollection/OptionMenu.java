@@ -6,7 +6,7 @@ public class OptionMenu {
     public void operation() {
 
         Scanner scanner = new Scanner(System.in);
-        AddorRemove addOrRemove = new AddorRemove();
+        AddOrRemove addOrRemove = new AddOrRemove();
 
         while (true) {
 
@@ -14,6 +14,7 @@ public class OptionMenu {
                     "1. ADD     \n" +
                     "2. DISPLAY \n" +
                     "3. EDIT    \n" +
+                    "4. REMOVE  \n" +
                     "0. EXIT    \n");
             int choice = scanner.nextInt();
 
@@ -27,6 +28,9 @@ public class OptionMenu {
                     break;
                 case 3:
                     addOrRemove.editPerson();
+                    break;
+                case 4:
+                    addOrRemove.removePerson();
                     break;
 
 
