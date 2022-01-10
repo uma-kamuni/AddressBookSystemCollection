@@ -1,5 +1,4 @@
 package com.bridgelabz.addressbooksystemcollection;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -74,6 +73,11 @@ public class BooksHashMap {
 
     private void searchAcrossCity(String contactsInCity) {
         for (String keyOfBook : addressBooks.keySet()) {
+            long noOfContactsInCity = addressBooks.get(keyOfBook)
+                    .stream()
+                    .filter(contactInfo -> contactsInCity.equals(contactInfo.getCity()))
+                    .count();
+            System.out.println("Number of contact in city = " + noOfContactsInCity);
             addressBooks.get(keyOfBook)
                     .stream()
                     .filter(contactInfo -> contactsInCity.equals(contactInfo.getCity()))
@@ -82,11 +86,18 @@ public class BooksHashMap {
     }
 
     private void searchAcrossState(String contactsInState) {
-        for (String keyOfBook : addressBooks.keySet()) {
+                for (String keyOfBook : addressBooks.keySet()) {
+                    long noOfContactsInState = addressBooks.get(keyOfBook)
+                            .stream()
+                            .filter(contactInfo -> contactsInState.equals(contactInfo.getState()))
+                            .count();
+                    System.out.println("Number of contact in State = " + noOfContactsInState);
             addressBooks.get(keyOfBook)
                     .stream()
                     .filter(contactInfo -> contactsInState.equals(contactInfo.getState()))
                     .forEach(System.out::println);
         }
     }
+
+
 }
