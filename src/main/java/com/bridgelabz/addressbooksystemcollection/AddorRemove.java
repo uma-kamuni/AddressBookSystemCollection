@@ -131,7 +131,11 @@ class AddOrRemove {
 
 
     public void removePerson() {
-
+        if (detailsAddressBookArrayList.size() ==0) {
+        	System.out.println("Address book is empty. Please add details to remove the expected Contacts");
+        }
+        else
+        {
         System.out.println("Enter a first name you want to delete...");
         String removeName = scanner.next();
 
@@ -150,5 +154,5 @@ class AddOrRemove {
             System.out.println("First Name not found");
         }
     }
-
+  }
 }
