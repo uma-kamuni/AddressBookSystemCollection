@@ -45,6 +45,10 @@ public class BooksHashMap {
 				}
 				System.out.println("\n +addressBooks");
 				break;
+				
+			default:
+				System.exit(0);
+				break;
 			}
 		}
 
