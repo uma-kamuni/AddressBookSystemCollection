@@ -1,7 +1,9 @@
 package com.bridgelabz.addressbooksystemcollection;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AddOrRemove {
     ArrayList<detailsAddressBook> detailsAddressBookArrayList = new ArrayList<>();
@@ -45,7 +47,11 @@ public class AddOrRemove {
             details.setPhoneNumber(phoneNumber);
             details.setEmailAddress(emailAddress);
             detailsAddressBookArrayList.add(details);   //Adding details data
-
+            
+            detailsAddressBookArrayList = (ArrayList<detailsAddressBook>) detailsAddressBookArrayList
+            		.stream()
+            		.sorted(Comparator.comparing(detailsAddressBook::getFirstName))
+                    .collect(Collectors.toList());
         }
         return detailsAddressBookArrayList;
     }
